@@ -136,7 +136,7 @@ jobs:
     name: "Comment if workflow files have changed"
     needs: test-pr
     runs-on: ubuntu-latest
-    if: ${{ needs.test-pr.outputs.is_valid == 'false' }}
+    if: ${{ always() && needs.test-pr.outputs.is_valid == 'false' }}
     env:
       NR: ${{ needs.test-pr.outputs.number }}
     steps:

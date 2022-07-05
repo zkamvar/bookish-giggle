@@ -27,6 +27,7 @@ jobs:
           invalid-hash: ${{ fromJSON(steps.hash.outputs.json)[github.repository] }}
       - name: "Comment result of validation"
         id: comment-diff
+        if: ${{ always() }}
         uses: carpentries/actions/comment-diff@main
         with:
           pr: ${{ github.event.number }}
