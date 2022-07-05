@@ -46,7 +46,7 @@ jobs:
       - name: "Check PR"
         id: check-pr
         if: ${{ steps.dl.outputs.success == 'true' }}
-        uses: carpentries/actions/check-valid-pr@main
+        uses: carpentries/actions/check-valid-pr@add-invalid-hash
         with:
           pr: ${{ steps.get-pr.outputs.NUM }}
           sha: ${{ github.events.workflow_run.head_commit.sha }}
