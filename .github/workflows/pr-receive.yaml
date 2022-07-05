@@ -18,6 +18,7 @@ jobs:
         uses: carpentries/actions/check-valid-pr@add-invalid-hash
         with:
           pr: ${{ github.event.number }}
+          invalid-hash: c26fdf32253acb5f03e3ebc75d8792309c1feb20
 
   build-md-source:
     name: "Build markdown source files"
