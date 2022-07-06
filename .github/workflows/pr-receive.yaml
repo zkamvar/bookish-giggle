@@ -25,7 +25,7 @@ jobs:
         uses: carpentries/actions/check-valid-pr@add-invalid-hash
         with:
           pr: ${{ github.event.number }}
-          invalid-hash: ${{ fromJSON(steps.hash.outputs.json)[github.repository] }}
+          invalid: ${{ fromJSON(steps.hash.outputs.json)[github.repository] }}
       - name: "Record PR number"
         id: record
         if: ${{ always() }}

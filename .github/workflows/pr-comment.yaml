@@ -54,7 +54,7 @@ jobs:
         with:
           pr: ${{ steps.get-pr.outputs.NUM }}
           sha: ${{ github.events.workflow_run.head_commit.sha }}
-          invalid-hash: ${{ fromJSON(steps.hash.outputs.json)[github.repository] }}
+          invalid: ${{ fromJSON(steps.hash.outputs.json)[github.repository] }}
 
   # Create an orphan branch on this repository with two commits
   #  - the current HEAD of the md-outputs branch
