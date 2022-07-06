@@ -50,11 +50,12 @@ jobs:
       - name: "Check PR"
         id: check-pr
         if: ${{ steps.dl.outputs.success == 'true' }}
-        uses: carpentries/actions/check-valid-pr@add-invalid-hash
+        uses: carpentries/actions/check-valid-pr@add-fail-on-error
         with:
           pr: ${{ steps.get-pr.outputs.NUM }}
           sha: ${{ github.events.workflow_run.head_commit.sha }}
           invalid: ${{ fromJSON(steps.hash.outputs.json)[github.repository] }}
+          fail_on_error: false
 
   # Create an orphan branch on this repository with two commits
   #  - the current HEAD of the md-outputs branch
