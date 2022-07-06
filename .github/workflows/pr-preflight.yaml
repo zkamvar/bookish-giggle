@@ -24,7 +24,7 @@ jobs:
         uses: carpentries/actions/check-valid-pr@add-invalid-hash
         with:
           pr: ${{ github.event.number }}
-          invalid-hash: ${{ fromJSON(steps.hash.outputs.json)[github.repository] }}
+          "invalid-hash": ${{ fromJSON(steps.hash.outputs.json)[github.repository] }}
       - name: "Comment result of validation"
         id: comment-diff
         if: ${{ always() }}
