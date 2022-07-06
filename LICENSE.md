@@ -2,7 +2,7 @@
 title: "Licenses"
 ---
 
-## Instructional Material
+## Instructional Material!
 
 All Software Carpentry, Data Carpentry, and Library Carpentry instructional material is
 made available under the [Creative Commons Attribution
